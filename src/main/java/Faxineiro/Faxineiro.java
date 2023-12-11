@@ -2,6 +2,7 @@ package Faxineiro;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class Faxineiro {
     private String nome;
     private String endereco;
@@ -10,7 +11,7 @@ public class Faxineiro {
     private double horasTrabalhadas;
     private double salario;
 
-    private List faturas;
+    private List<Fatura> faturas;
 
     // Getters
     public String getNome() {
@@ -37,7 +38,7 @@ public class Faxineiro {
         return this.salario;
     }
 
-    public List getFaturas() {
+    public List<Fatura> getFaturas() {
         return this.faturas;
     }
 
@@ -66,7 +67,7 @@ public class Faxineiro {
         this.salario = salario;
     }
 
-    public void setFaturas(List faturas) {
+    public void setFaturas(List<Fatura> faturas) {
         this.faturas = faturas;
     }
 
@@ -79,10 +80,14 @@ public class Faxineiro {
         System.out.println("Salário: " + this.salario);
     }
 
-    public void adicionarFatura(List fatura) {
+    public void adicionarFatura(Fatura fatura) {
         if (this.faturas == null) {
             this.faturas = new ArrayList<>();
         }
         this.faturas.add(fatura);
+    }
+
+    public void realizarServico() {
+        System.out.println("Serviço realizado pelo faxineiro " + this.nome);
     }
 }

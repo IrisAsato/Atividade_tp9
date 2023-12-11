@@ -1,7 +1,7 @@
 package Sistema;
 
 import cliente.Cliente;
-import Emprego.Emprego;
+import Reserva.Reserva;
 import Faxineiro.Faxineiro;
 import Gerente.Gerente;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class Sistema {
     private List<Cliente> clientes;
     private List<Faxineiro> faxineiros;
-    private List<Emprego> empregos;
+    private List<Reserva> empregos;
     private Gerente gerente;
 
     public Sistema() {
@@ -29,7 +29,7 @@ public class Sistema {
         return this.faxineiros;
     }
 
-    public List<Emprego> getEmpregos() {
+    public List<Reserva> getEmpregos() {
         return this.empregos;
     }
 
@@ -51,7 +51,7 @@ public class Sistema {
         this.faxineiros.add(faxineiro);
     }
 
-    public void adicionarEmprego(Emprego emprego) {
+    public void adicionarEmprego(Reserva emprego) {
         this.empregos.add(emprego);
     }
 
@@ -70,7 +70,7 @@ public class Sistema {
             programacao.append("Faxineiro: ").append(faxineiro.getNome()).append("\n");
             programacao.append("Empregos:\n");
 
-            for (Emprego emprego : this.empregos) {
+            for (Reserva emprego : this.empregos) {
                 if (emprego.getFaxineiro().equals(faxineiro)) {
                     programacao.append(" Dia: ").append(emprego.getData());
                 }
